@@ -3,6 +3,8 @@
  * Suchau Jiraprapot <seroz24@gmail.com>
  */
 ;(function($){
+	// th-th use same language definition, except that backend "thai" detect 'th-th' to display thaiyear 
+	$.fn.datepicker.dates['th-th'] =
 	$.fn.datepicker.dates['th'] = {
 		days: ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัส", "ศุกร์", "เสาร์", "อาทิตย์"],
 		daysShort: ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส", "อา"],
