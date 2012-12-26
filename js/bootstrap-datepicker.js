@@ -684,6 +684,9 @@
 	}
 
 	var DPGlobal = {};
+	$.fn.datepicker.getBackend = function() {
+		return DPGlobal;
+	};
 	$.fn.datepicker.setBackend = function(backend){
 		DPGlobal = $.extend({}, {
 			getLang: function(lang){
