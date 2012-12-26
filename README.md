@@ -85,6 +85,32 @@ Attached to non-field element, using events to work with the date values.
         });
     });
 
+## Thai extension
+
+Adding thai-year display/input features base on Extensible branch by @eternicode.
+
+[Thai-year](http://en.wikipedia.org/wiki/Thai_solar_calendar) 
+uses Buddhist-Era (B.E.) that is 543 years greater than Christian-Era (C.E.).
+
+#### Smart year input detection
+
+Determine year value for both era during user input and trying to convert to properly era automatically.
+
+    7/10/98 -> 7/10/1998(C.E.) or 7/10/2541(B.E.)
+    7/10/12 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
+    7/10/55 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
+    7/10/1998 -> 7/10/1998(C.E.) or 7/10/2541(B.E.)
+    7/10/2012 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
+    7/10/2555 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
+
+#### Language option for thai extension
+
+The language file locales/xxxx.th.js support default language 'th' and some variants.
+
+    th - thai language / C.E.
+    th-th - thai language / B.E.
+    en-th - eng language / B.E.
+    en~th - eng language / C.E. (same as 'en' with smart-year input detection)
 
 # Using bootstrap-datepicker.js
 
@@ -100,6 +126,19 @@ Call the datepicker via javascript:
 
     $('.datepicker').datepicker()
 
+#### Using with thai extension
+
+Thai extension requires the "default" backend file xxxx.default.js and thai language file xxxx.th.js.
+
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/backkends/bootstrap-datepicker.default.js"></script>
+    <script type="text/javascript" src="js/backkends/bootstrap-datepicker.default.th.js"></script>
+    <script type="text/javascript" src="js/locales/bootstrap-datepicker.th.js"></script>
+######
+    $('.datepicker').datepicker({language:'th-th',format:'dd/mm/yyyy'})
+
+	
 ## Dependencies
 
 Requires bootstrap's dropdown component (`dropdowns.less`) for some styles, and bootstrap's sprites (`sprites.less` and associated images) for arrows.
