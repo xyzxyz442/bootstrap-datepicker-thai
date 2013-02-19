@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>bootstrap-datepicker-thai by jojosati</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">bootstrap-datepicker-thai</h1>
+        <p class="header">Extend eternicode's bootstrap-datepicker with thai year support.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/jojosati/bootstrap-datepicker-thai/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jojosati/bootstrap-datepicker-thai/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/jojosati/bootstrap-datepicker-thai">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jojosati">jojosati</a></p>
+
+
+      </header>
+      <section>
+        <h1>bootstrap-datepicker-thai</h1>
+
+<p>Extend eternicode's <a href="http://eternicode.github.com/bootstrap-datepicker/">bootstrap-datepicker</a> with thai year support.</p>
+
+<h2>Thai extension</h2>
+
+<p>Adding thai-year display/input features base on master branch by eternicode.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Thai_solar_calendar">Thai-year</a> 
+uses Buddhist-Era (B.E.) that is 543 years greater than Christian-Era (C.E.).</p>
+
+<h4>Smart year input detection</h4>
+
+<p>Determine year value for both era during user input and trying to convert to proper era automatically.</p>
+
+<pre><code>7/10/98 -&gt; 7/10/1998(C.E.) or 7/10/2541(B.E.)
+7/10/12 -&gt; 7/10/2012(C.E.) or 7/10/2555(B.E.)
+7/10/55 -&gt; 7/10/2012(C.E.) or 7/10/2555(B.E.)
+7/10/1998 -&gt; 7/10/1998(C.E.) or 7/10/2541(B.E.)
+7/10/2012 -&gt; 7/10/2012(C.E.) or 7/10/2555(B.E.)
+7/10/2555 -&gt; 7/10/2012(C.E.) or 7/10/2555(B.E.)
+</code></pre>
+
+<h4>Language option for thai extension</h4>
+
+<p>The language file locales/bootstrap-datepicker.th.js support default language 'th' and some more variants.</p>
+
+<pre><code>th - thai language / C.E.
+th-th - thai language / B.E.
+en-th - eng language / B.E.
+en-en.th - eng language / C.E. (same as 'en' with smart-year input detection)
+</code></pre>
+
+<h4>Using with thai extension</h4>
+
+<p>Thai extension requires thai language file and the extension file.</p>
+
+<pre><code>&lt;script type="text/javascript" src="js/bootstrap-datepicker.js"&gt;&lt;/script&gt;
+&lt;!-- thai extension --&gt;
+&lt;script type="text/javascript" src="js/bootstrap-datepicker-thai.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/locales/bootstrap-datepicker.th.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<pre><code>$('.datepicker').datepicker({language:'th-th',format:'dd/mm/yyyy'})
+</code></pre>
+
+<h2>Other features</h2>
+
+<p>Please refer to eternicode's <a href="http://eternicode.github.com/bootstrap-datepicker/">bootstrap-datepicker</a>.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
