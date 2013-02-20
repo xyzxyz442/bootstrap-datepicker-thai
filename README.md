@@ -1,6 +1,8 @@
-# bootstrap-datepicker-thai
+# [bootstrap-datepicker-thai](http://jojosati.github.com/bootstrap-datepicker-thai)
 
 Extend eternicode's [bootstrap-datepicker](http://eternicode.github.com/bootstrap-datepicker/) with thai year support.
+
+See [demo](http://jojosati.github.com/bootstrap-datepicker-thai/demo).
 
 ## Thai extension
 
