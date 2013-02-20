@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>bootstrap-datepicker-thai demo</title>
+
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/datepicker.css" rel="stylesheet" media="screen">
+    <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Bootstrap-Datepicker-Thai <small><a href="http://github.com/jojosati/bootstrap-datepicker-thai">bootstrap-datepicker-thai.js</a></small></h1>
+        <div class="pull-left" style="min-width:30%;">
+          <h3>Demo</h3>
+          <div id="example_html">
+              <label>default(en)</label>
+              <input class="input-medium datepicker" type="text" 
+                data-provide="datepicker">
+
+              <label>th</label>
+              <input class="input-medium datepicker" type="text" 
+                data-provide="datepicker" data-date-language="th">
+
+              <label>th-th</label>
+              <input class="input-medium datepicker" type="text" 
+                data-provide="datepicker" data-date-language="th-th">
+
+              <label>inline en-th</label>
+              <div class="datepicker" data-date-language="en-th"></div>
+          </div>
+        </div>  
+        <div>
+          <h3>HTML</h3>
+          <pre class="pre-scrollable prettyprint linenums" data-source="#example_html"></pre>
+        </div>
+        <div>
+          <h3>SCRIPT</h3>
+          <pre class="pre-scrollable prettyprint linenums" data-source="#example_script"></pre>
+        </div>
+        <hr>
+        <footer>
+          <p>maintained by <a href="http://github.com/jojosati">jojosati</a></p>
+        </footer>
+      </div>
+    
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-datepicker-thai.js"></script>
+    <script src="js/locales/bootstrap-datepicker.th.js"></script>
+
+    <script id="example_script"  type="text/javascript">
+      function demo() {
+        $('.datepicker').datepicker();
+      }
+    </script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('pre[data-source]').each(function(){
+          var $this = $(this),
+            $source = $($this.data('source'));
+
+          var text = [];
+          $source.each(function(){
+            var $s = $(this);
+            if ($s.attr('type') == 'text/javascript'){
+              text.push($s.html().replace(/(\n)*/, ''));
+            } else {
+              text.push($s.clone().wrap('<div>').parent().html()
+                .replace(/(\"(?=[[{]))/g,'\'')
+                .replace(/\]\"/g,']\'').replace(/\}\"/g,'\'') // javascript not support lookbehind
+                .replace(/\&quot\;/g,'"'));
+            }
+          });
+          
+          $this.text(text.join('\n\n').replace(/\t/g, '    '));
+        });
+
+        prettyPrint();
+        demo();
+      });
+    </script>
+    
+</body>
+</html>
