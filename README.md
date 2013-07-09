@@ -1,51 +1,46 @@
-# [bootstrap-datepicker-thai](http://jojosati.github.com/bootstrap-datepicker-thai)
+# [bootstrap-datepicker](http://eternicode.github.com/bootstrap-datepicker/) [![Build Status](https://travis-ci.org/eternicode/bootstrap-datepicker.png?branch=master)](https://travis-ci.org/eternicode/bootstrap-datepicker)
 
-Extend eternicode's [bootstrap-datepicker](http://eternicode.github.com/bootstrap-datepicker/) with thai year support.
+This is a fork of Stefan Petre's [original code](http://www.eyecon.ro/bootstrap-datepicker/);
+thanks go to him for getting this thing started!
 
-See [demo](http://jojosati.github.com/bootstrap-datepicker-thai/demo).
+Please note that this fork is not used on Stefan's page at this time, nor is it maintained or
+contributed to by him (yet?)
 
-## Thai extension
+Versions are incremented according to [semver](http://semver.org/).
 
-<<<<<<< HEAD
-Adding thai-year display/input features base on master branch by eternicode.
-=======
 [Online Demo](http://eternicode.github.com/bootstrap-datepicker/)
 
 # Requirements
->>>>>>> master
 
-[Thai-year](http://en.wikipedia.org/wiki/Thai_solar_calendar) 
-uses Buddhist-Era (B.E.) that is 543 years greater than Christian-Era (C.E.).
+* [Bootstrap](http://twitter.github.com/bootstrap/) 2.0.4+
+* [jQuery](http://jquery.com/) 1.7.1+
 
-<<<<<<< HEAD
-#### Smart year input detection
-=======
 These are the specific versions bootstrap-datepicker is tested against (`js` files) and built against (`css` files).  Use other versions at your own risk.
->>>>>>> master
 
-Determine year value for both era during user input and trying to convert to proper era automatically.
+# Example
 
-    7/10/98 -> 7/10/1998(C.E.) or 7/10/2541(B.E.)
-    7/10/12 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
-    7/10/55 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
-    7/10/1998 -> 7/10/1998(C.E.) or 7/10/2541(B.E.)
-    7/10/2012 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
-    7/10/2555 -> 7/10/2012(C.E.) or 7/10/2555(B.E.)
+Attached to a field with the format specified via options:
 
-#### Language option for thai extension
+```html
+<input type="text" value="02-16-2012" class="datepicker">
+```
+```javascript
+$('.datepicker').datepicker({
+    format: 'mm-dd-yyyy'
+});
+```
 
-The language file locales/bootstrap-datepicker.th.js support default language 'th' and some more variants.
+Attached to a field with the format specified via data tag:
 
-    th - thai language / C.E.
-    th-th - thai language / B.E.
-    en-th - eng language / B.E.
-    en-en.th - eng language / C.E. (same as 'en' with smart-year input detection)
+```html
+<input type="text" value="02/16/12" data-date-format="mm/dd/yy" class="datepicker" >
+```
+```javascript
+$('.datepicker').datepicker();
+```
 
-#### Using with thai extension
+As component:
 
-<<<<<<< HEAD
-Thai extension requires thai language file and the extension file.
-=======
 ```html
 <div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
     <input size="16" type="text" value="12-02-2012" readonly><span class="add-on"><i class="icon-th"></i></span>
@@ -54,20 +49,9 @@ Thai extension requires thai language file and the extension file.
 ```javascript
 $('.datepicker').datepicker();
 ```
->>>>>>> origin/upstream/master
 
-    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-    <!-- thai extension -->
-    <script type="text/javascript" src="js/bootstrap-datepicker-thai.js"></script>
-    <script type="text/javascript" src="js/locales/bootstrap-datepicker.th.js"></script>
-######
-    $('.datepicker').datepicker({language:'th-th',format:'dd/mm/yyyy'})
-    
-## Other features
+Attached to non-field element, using events to work with the date values.
 
-<<<<<<< HEAD
-Please refer to eternicode's [bootstrap-datepicker](http://eternicode.github.com/bootstrap-datepicker/).
-=======
 ```html
 <div class="alert alert-error" id="alert">
     <strong>Oh snap!</strong>
@@ -528,4 +512,3 @@ $('.datepicker').datepicker({
     language: XX    //as you defined in bootstrap-datepicker.XX.js
 });
 ```
->>>>>>> origin/upstream/master
