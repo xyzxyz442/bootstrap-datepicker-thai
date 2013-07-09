@@ -10,7 +10,7 @@
                 , code    : 'th'
                 , bound   : 2400  // full year value that detect as thai year 
                 , shbound : 40  // short year value that detect as thai year 
-                , shwrap  : 70  // short year value that wrap to previous century
+                , shwrap  : 84  // short year value that wrap to previous century
                 , shbase  : 2000  // default base for short year 20xx
                 }
                 
