@@ -75,6 +75,8 @@
             var formats = format //this.parseFormat(format)
               , parts   = date && date.match(this.nonpunctuation) || []
             
+            if (typeof formats === 'string')
+              formats = DPGlobal.parseFormat(format);
             if (parts.length == formats.parts.length) {
               var seps  = $.extend([], formats.separators)
                 , xdate = []
@@ -106,6 +108,9 @@
                 , yyyy: (thai.adj+date.getUTCFullYear()).toString()
                 }
                 
+            if (typeof formats === 'string')
+              formats = DPGlobal.parseFormat(format);
+              
             if (parts.length == formats.parts.length) {
               var seps  = $.extend([], formats.separators)
                 , xdate = []
@@ -164,7 +169,7 @@
       , fill: function(){
             _basemethod_.fill.call(this)
             
-            if (dspThaiYear(this.language))
+            if (dspThaiYear(this.o.language))
               this.fillThai()
           }
       , clickThai: function(e){
@@ -174,7 +179,7 @@
               target.text(Number(target.text()) - thai.adj)
           }
       , click: function(e){
-            if (dspThaiYear(this.language))
+            if (dspThaiYear(this.o.language))
               this.clickThai(e)
               
             _basemethod_.click.call(this,e)
