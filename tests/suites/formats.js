@@ -64,9 +64,25 @@ test('M: Month shortname.', function(){
     equal(this.input.val().split('-')[1], 'Mar');
 });
 
+test('M: Month shortname case insensitive.', function(){
+    this.input
+        .val('2012-MAR-05')
+        .datepicker({format: 'yyyy-M-dd'})
+        .datepicker('setValue');
+    equal(this.input.val().split('-')[1], 'Mar');
+});
+
 test('MM: Month full name.', function(){
     this.input
         .val('2012-March-5')
+        .datepicker({format: 'yyyy-MM-dd'})
+        .datepicker('setValue');
+    equal(this.input.val().split('-')[1], 'March');
+});
+
+test('M: Month fullname case insensitive.', function(){
+    this.input
+        .val('2012-MARCH-05')
         .datepicker({format: 'yyyy-MM-dd'})
         .datepicker('setValue');
     equal(this.input.val().split('-')[1], 'March');
@@ -223,4 +239,13 @@ test('Invalid formats are force-parsed into a valid date on tab', patch_date(fun
     });
 
     equal(this.input.val(), '56-September-30');
+}));
+
+test('Trailing separators', patch_date(function(Date){
+    Date.now = UTCDate(2012, 4, 31);
+    this.input
+        .val('29.02.2012.')
+        .datepicker({format: 'dd.mm.yyyy.'})
+        .datepicker('setValue');
+    equal(this.input.val(), '29.02.2012.');
 }));
